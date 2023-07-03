@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hemliga-lappen-ingress
+  labels:
+    deployment: hemliga-lappen
+spec:
+  tls:
+    - hosts:
+        - hemliga-lappen.stage.ur.se
+  rules:
+    - host: hemliga-lappen.stage.ur.se
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: hemliga-lappen-service
+                port:
+                  number: 80

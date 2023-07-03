@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: devops-hemliga-lappen
+  annotations:
+    field.cattle.io/projectId: c-qw94g:p-vfvtw # DevCore project in prod02
+    field.cattle.io/resourceQuota: '{"limit":{"requestsCpu":"500m","requestsMemory":"512Mi","requestsStorage":"5120Mi","limitsCpu":"500m","limitsMemory":"512Mi"}}'
