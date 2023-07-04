@@ -6,7 +6,6 @@ bases:
 
 resources:
   - ingress.yaml
-  - namespace.yaml
 
 replacements:
 - source:
