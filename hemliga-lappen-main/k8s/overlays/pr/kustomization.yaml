@@ -19,5 +19,6 @@ replacements:
     fieldPaths:
     - spec.rules.0.host
     - spec.tls.0.hosts.0
+    - metadata.labels.ingress-url
 
 
