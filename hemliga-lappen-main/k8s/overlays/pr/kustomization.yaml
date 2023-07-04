@@ -8,3 +8,15 @@ resources:
   - ingress.yaml
   - namespace.yaml
 
+replacements:
+- source:
+    kind: Deployment
+    name: hemliga-lappen-deployment
+    fieldPath: metadata.labels.ingress-url
+  targets:
+  - select:
+      kind: Ingress
+      name: hemliga-lappen-ingress
+    fieldPaths:
+    - spec.rules.0.host
+
