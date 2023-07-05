@@ -18,7 +18,7 @@ spec:
         unit: developers
     spec:
       containers:
-        - image: drmurx/docker-d-note
+        - image: harbor.tools.ur.se/team-devops/hemliga-lappen
           imagePullPolicy: Always
           name: hemliga-lappen
           ports:

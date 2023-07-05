@@ -1,12 +1,9 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-
 bases:
-  - ../../base
-
+- ../../base
 resources:
-  - ingress.yaml
-
+- ingress.yaml
 replacements:
 - source:
     kind: Deployment
@@ -20,5 +17,6 @@ replacements:
     - spec.rules.0.host
     - spec.tls.0.hosts.0
     - metadata.labels.ingress-url
-
-
+images:
+- name: harbor.tools.ur.se/team-devops/hemliga-lappen
+  newTag: 9df6c115

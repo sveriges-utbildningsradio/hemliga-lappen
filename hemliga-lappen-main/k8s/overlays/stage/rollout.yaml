@@ -1,0 +1,41 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: hemliga-lappen-stage-rollout
+spec:
+  replicas: 5
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: hemliga-lappen
+  template:
+    metadata:
+      labels:
+        app: hemliga-lappen
+    spec:
+      containers:
+      - image: harbor.tools.ur.se/team-devops/hemliga-lappen
+        imagePullPolicy: Always
+        name: hemliga-lappen
+        ports:
+          - containerPort: 8080
+            protocol: TCP
+        resources:
+          limits:
+            cpu: 200m
+            memory: 256Mi
+          requests:
+            cpu: 100m
+            memory: 128Mi
+  strategy:
+    canary:
+      canaryService: hemliga-lappen-stage-preview
+      steps:
+      - setWeight: 20
+      - pause: {}
+      - setWeight: 40
+      - pause: {duration: 10}
+      - setWeight: 60
+      - pause: {duration: 10}
+      - setWeight: 80
+      - pause: {duration: 10}
