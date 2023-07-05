@@ -7,4 +7,4 @@ resources:
 - namespace.yaml
 images:
 - name: harbor.tools.ur.se/team-devops/hemliga-lappen
-  newTag: 5c7633f0
+  newTag: f6b86e2f
