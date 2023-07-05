@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: hemliga-lappen-ingress
+  name: hemliga-lappen-ingress-preview
   labels:
     deployment: hemliga-lappen
 spec:
