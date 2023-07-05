@@ -8,6 +8,7 @@ spec:
   selector:
     matchLabels:
       app: hemliga-lappen
+      deployment: hemliga-lappen
   template:
     metadata:
       labels:
