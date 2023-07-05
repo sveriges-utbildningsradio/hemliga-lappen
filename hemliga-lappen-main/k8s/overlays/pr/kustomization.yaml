@@ -1,0 +1,24 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+bases:
+  - ../../base
+
+resources:
+  - ingress.yaml
+
+replacements:
+- source:
+    kind: Deployment
+    name: hemliga-lappen-deployment
+    fieldPath: metadata.labels.ingress-url
+  targets:
+  - select:
+      kind: Ingress
+      name: hemliga-lappen-ingress
+    fieldPaths:
+    - spec.rules.0.host
+    - spec.tls.0.hosts.0
+    - metadata.labels.ingress-url
+
+
