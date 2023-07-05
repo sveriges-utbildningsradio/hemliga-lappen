@@ -13,6 +13,7 @@ spec:
     metadata:
       labels:
         app: hemliga-lappen
+        deployment: hemliga-lappen
     spec:
       containers:
       - image: harbor.tools.ur.se/team-devops/hemliga-lappen
