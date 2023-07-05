@@ -3,5 +3,5 @@ kind: Namespace
 metadata:
   name: hemliga-lappen
   annotations:
-    field.cattle.io/projectId: c-b7ghtp-xhfzw # DevCore project in dev02
+    field.cattle.io/projectId: c-b7ght:p-7r2m8
     field.cattle.io/resourceQuota: '{"limit":{"requestsCpu":"500m","requestsMemory":"512Mi","requestsStorage":"5120Mi","limitsCpu":"500m","limitsMemory":"512Mi"}}'
