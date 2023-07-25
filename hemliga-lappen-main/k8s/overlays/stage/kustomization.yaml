@@ -10,4 +10,4 @@ resources:
 - service-preview.yaml
 images:
 - name: harbor.tools.ur.se/team-devops/hemliga-lappen
-  newTag: 0725f583
+  newTag: c09ec8b3
