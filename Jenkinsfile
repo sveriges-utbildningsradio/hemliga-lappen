@@ -1,4 +1,4 @@
-@Library('ur-shared-library@PR-92') _
+@Library('ur-shared-library@master') _
 urWebPipeline(
   appName: "hemliga-lappen",
   namespace: "hemliga-lappen",
