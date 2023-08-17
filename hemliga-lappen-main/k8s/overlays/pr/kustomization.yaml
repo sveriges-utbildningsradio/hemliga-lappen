@@ -19,4 +19,4 @@ replacements:
     - metadata.labels.ingress-url
 images:
 - name: harbor.tools.ur.se/team-devops/hemliga-lappen
-  newTag: latest
+  newTag: 5b2a346f
