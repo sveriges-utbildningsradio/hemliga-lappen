@@ -6,4 +6,4 @@ resources:
 - ingress.yaml
 images:
 - name: harbor.tools.ur.se/team-devops/hemliga-lappen
-  newTag: main-ab0f3fdd
+  newTag: main-6ebdd905
