@@ -4,7 +4,6 @@ bases:
 - ../../base
 resources:
 - ingress.yaml
-- namespace.yaml
 images:
 - name: harbor.tools.ur.se/team-devops/hemliga-lappen
   newTag: main-83ac9da4

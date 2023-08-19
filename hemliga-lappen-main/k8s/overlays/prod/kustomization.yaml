@@ -5,7 +5,6 @@ bases:
 resources:
 - ingress.yaml
 - ingress-preview.yaml
-- namespace.yaml
 - rollout.yaml
 - service-preview.yaml
 images:
