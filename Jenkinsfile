@@ -8,6 +8,7 @@ urWebPipeline(
   folderToDeploy: "deploy",
   codeAnalysis: "sonarqube",
   registryUrl: "harbor.tools.ur.se/team-devops",
+  argoCD: "true",
   cmds: [
     // [name: "Install", cmd: "yarn install"],
     // [name: "Build", cmd: "yarn build"],
