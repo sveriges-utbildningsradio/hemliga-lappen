@@ -7,19 +7,6 @@ resources:
 - ingress-preview.yaml
 - rollout.yaml
 - service-preview.yaml
-replacements:
-- source:
-    kind: Deployment
-    name: hemliga-lappen-deployment
-    fieldPath: metadata.labels.ingress-url
-  targets:
-  - select:
-      kind: Ingress
-      name: hemliga-lappen-ingress
-    fieldPaths:
-    - spec.rules.0.host
-    - spec.tls.0.hosts.0
-    - metadata.labels.ingress-url
 images:
 - name: harbor.tools.ur.se/team-devops/hemliga-lappen
   newTag: main-a15b3d61
