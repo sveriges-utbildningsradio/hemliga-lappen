@@ -14,7 +14,7 @@ spec:
     metadata:
       labels:
         app: hemliga-lappen
-        team: devcore
+        team: team-devops
         unit: developers
     spec:
       containers:
