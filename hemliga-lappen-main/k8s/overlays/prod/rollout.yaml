@@ -2,6 +2,10 @@ apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
   name: hemliga-lappen-prod-rollout
+  annotations:
+    notifications.argoproj.io/subscribe.on-rollout-step-completed.slack: argoCD-test-channel-1;argoCD-test-channel-2
+    notifications.argoproj.io/subscribe.on-rollout-updated.github: ""
+    notifications.argoproj.io/subscribe.on-rollout-step-completed.github: ""
 spec:
   replicas: 5
   revisionHistoryLimit: 1
