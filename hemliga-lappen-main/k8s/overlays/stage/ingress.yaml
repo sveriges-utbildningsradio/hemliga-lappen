@@ -8,6 +8,7 @@ spec:
   tls:
     - hosts:
         - hemliga-lappen.stage.ur.se
+        - hemliga-lappen-canary.stage.ur.se
   rules:
     - host: hemliga-lappen.stage.ur.se
       http:

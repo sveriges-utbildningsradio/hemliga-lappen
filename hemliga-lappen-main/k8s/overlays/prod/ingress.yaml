@@ -8,6 +8,7 @@ spec:
   tls:
     - hosts:
         - hemliga-lappen.prod.ur.se
+        - hemliga-lappen-canary.prod.ur.se
   rules:
     - host: hemliga-lappen.prod.ur.se
       http:
@@ -19,7 +20,7 @@ spec:
                 name: hemliga-lappen-service
                 port:
                   number: 80
-    - host: hemliga-lappen.prod.ur.se
+    - host: hemliga-lappen-canary.prod.ur.se
       http:
         paths:
           - path: /
