@@ -12,7 +12,8 @@ spec:
   selector:
     matchLabels:
       app: hemliga-lappen
-      deployment: hemliga-lappen
+      team: team-devops
+      unit: developers
   workloadRef:                                 # Reference an existing Deployment using workloadRef field
     apiVersion: apps/v1
     kind: Deployment
