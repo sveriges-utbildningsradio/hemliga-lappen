@@ -19,3 +19,13 @@ spec:
                 name: hemliga-lappen-service
                 port:
                   number: 80
+    - host: hemliga-lappen.prod.ur.se
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: hemliga-lappen-service-canary
+                port:
+                  number: 80
