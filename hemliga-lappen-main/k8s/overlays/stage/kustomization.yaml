@@ -7,8 +7,8 @@ resources:
 - rollout.yaml
 - service-canary.yaml
 replicas: # scale down deployment because rollout is used in production
-  - name: hemliga-lappen-deployment
-    count: 0
+- name: hemliga-lappen-deployment
+  count: 0
 images:
 - name: harbor.tools.ur.se/team-devops/hemliga-lappen
-  newTag: main-d8ad1e9e
+  newTag: main-5ed5956e
