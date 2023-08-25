@@ -9,31 +9,14 @@ metadata:
     notifications.argoproj.io/subscribe.on-rollout-step-completed.github: ""
 spec:
   replicas: 5
-  revisionHistoryLimit: 1
   selector:
     matchLabels:
       app: hemliga-lappen
       deployment: hemliga-lappen
-  template:
-    metadata:
-      labels:
-        app: hemliga-lappen
-        deployment: hemliga-lappen
-    spec:
-      containers:
-      - image: harbor.tools.ur.se/team-devops/hemliga-lappen
-        imagePullPolicy: Always
-        name: hemliga-lappen
-        ports:
-          - containerPort: 8080
-            protocol: TCP
-        resources:
-          limits:
-            cpu: 200m
-            memory: 256Mi
-          requests:
-            cpu: 100m
-            memory: 128Mi
+  workloadRef:                                 # Reference an existing Deployment using workloadRef field
+    apiVersion: apps/v1
+    kind: Deployment
+    name: hemliga-lappen-deployment
   strategy:
     canary:
       canaryService: hemliga-lappen-stage-preview
