@@ -11,4 +11,4 @@ replicas: # scale down deployment because rollout is used in production
   count: 0
 images:
 - name: harbor.tools.ur.se/team-devops/hemliga-lappen
-  newTag: main-961e7d88
+  newTag: main-c20a7da5
