@@ -20,7 +20,20 @@ spec:
     name: hemliga-lappen-deployment
   strategy:
     canary:
-      canaryService: hemliga-lappen-prod-preview
       steps:
       - setWeight: 5
+      - analysis:
+          templates:
+          - templateName: always-pass
+            clusterScope: true
       - pause: {}
+
+      canaryService: hemliga-lappen-prod-canary #required
+      stableService: hemliga-lappen-service  # required
+      trafficRouting:
+        nginx:
+          stableIngress: hemliga-lappen-ingress
+          additionalIngressAnnotations:   # optional
+            nginx.ingress.kubernetes.io/canary: "true"
+            canary-by-header: X-Canary
+            canary-by-header-value: canary

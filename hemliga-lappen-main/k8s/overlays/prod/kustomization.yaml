@@ -4,9 +4,8 @@ bases:
 - ../../base
 resources:
 - ingress.yaml
-- ingress-preview.yaml
 - rollout.yaml
-- service-preview.yaml
+- service-canary.yaml
 replicas: # scale down deployment because rollout is used in production
   - name: hemliga-lappen-deployment
     count: 0
