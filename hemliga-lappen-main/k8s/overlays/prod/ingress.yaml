@@ -4,8 +4,6 @@ metadata:
   name: hemliga-lappen-ingress
   labels:
     deployment: hemliga-lappen
-  annotations:
-    field.cattle.io/publicEndpoints: "something"
 spec:
   tls:
     - hosts:
