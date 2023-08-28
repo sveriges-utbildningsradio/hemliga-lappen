@@ -37,3 +37,5 @@ spec:
             nginx.ingress.kubernetes.io/canary: "true"
             canary-by-header: X-Canary
             canary-by-header-value: canary
+          IgnoredAnnotations:
+            field.cattle.io/publicEndpoints: ''
