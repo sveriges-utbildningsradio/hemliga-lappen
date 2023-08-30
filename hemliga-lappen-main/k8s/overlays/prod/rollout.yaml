@@ -15,6 +15,20 @@ spec:
     name: hemliga-lappen-deployment
   strategy:
     canary:
+      canary:
+      # Analysis that starts when there is a new canary update
+      # this analysis will run during the whole rollout process
+      # if there is a failure the rollout will be aborted and the
+      # canary will be removed
+      analysis:
+        templates:
+        - templateName: request-duration-99th-percentile
+          clusterScope: true
+        - templateName: success-rate-non-5xx
+          clusterScope: true
+        args:
+        - name: service-name
+          value: hemliga-lappen-prod-canary
       steps:
       - setWeight: 5
       - analysis:
@@ -30,7 +44,5 @@ spec:
           stableIngress: hemliga-lappen-ingress
           additionalIngressAnnotations:   # optional
             nginx.ingress.kubernetes.io/canary: "true"
-            canary-by-header: X-Canary
-            canary-by-header-value: canary
           ignoredAnnotations:
             - field.cattle.io/publicEndpoints

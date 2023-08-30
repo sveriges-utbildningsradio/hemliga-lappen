@@ -15,9 +15,21 @@ spec:
     name: hemliga-lappen-deployment
   strategy:
     canary:
+      # Analysis that starts when there is a new canary update
+      # this analysis will run during the whole rollout process
+      # if there is a failure the rollout will be aborted and the
+      # canary will be removed
+      analysis:
+        templates:
+        - templateName: request-duration-99th-percentile
+          clusterScope: true
+        - templateName: success-rate-non-5xx
+          clusterScope: true
+        args:
+        - name: service-name
+          value: hemliga-lappen-stage-canary
       steps:
       - setWeight: 20
-      - pause: {}
       - analysis:
           templates:
           - templateName: always-pass
