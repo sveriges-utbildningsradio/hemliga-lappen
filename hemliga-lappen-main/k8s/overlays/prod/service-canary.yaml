@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: hemliga-lappen-prod-canary
+  name: hemliga-lappen-service-canary
 spec:
   ports:
     - port: 80

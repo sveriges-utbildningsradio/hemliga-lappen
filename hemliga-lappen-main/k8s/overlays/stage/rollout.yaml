@@ -28,7 +28,7 @@ spec:
           clusterScope: true
         args:
         - name: service-name
-          value: hemliga-lappen-stage-canary
+          value: hemliga-lappen-service-canary
       steps:
       - analysis:
           templates:
@@ -49,7 +49,7 @@ spec:
       - setWeight: 80
       - pause: {duration: 10}
 
-      canaryService: hemliga-lappen-stage-canary #required
+      canaryService: hemliga-lappen-service-canary #required
       stableService: hemliga-lappen-service  # required
       trafficRouting:
         nginx:

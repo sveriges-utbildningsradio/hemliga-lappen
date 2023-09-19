@@ -36,7 +36,7 @@ spec:
           clusterScope: true
         args:
         - name: service-name
-          value: hemliga-lappen-prod-canary
+          value: hemliga-lappen-service-canary
         - name: url
           value: http://hemliga-lappen-canary.prod.ur.se
       steps:
@@ -47,7 +47,7 @@ spec:
             clusterScope: true
       - pause: {}
 
-      canaryService: hemliga-lappen-prod-canary #required
+      canaryService: hemliga-lappen-service-canary #required
       stableService: hemliga-lappen-service  # required
       trafficRouting:
         nginx:
