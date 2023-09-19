@@ -2,6 +2,10 @@ apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
   name: hemliga-lappen-prod-rollout
+  annotations:
+    notifications.argoproj.io/subscribe.on-rollout-updated.slack: devsecops-feed
+    notifications.argoproj.io/subscribe.analysis-run-failed.slack: devsecops-feed
+    notifications.argoproj.io/subscribe.on-rollout-completed.slack: devsecops-feed
 spec:
   replicas: 5
   selector:
@@ -26,9 +30,13 @@ spec:
           clusterScope: true
         - templateName: success-rate-non-5xx
           clusterScope: true
+        - templateName: load-test-errors-latency
+          clusterScope: true
         args:
         - name: service-name
           value: hemliga-lappen-prod-canary
+        - name: url
+          value: http://hemliga-lappen-canary.prod.ur.se
       steps:
       - setWeight: 5
       - analysis:
