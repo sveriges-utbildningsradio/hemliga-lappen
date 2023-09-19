@@ -20,21 +20,23 @@ spec:
       # if there is a failure the rollout will be aborted and the
       # canary will be removed
       analysis:
+        startingStep: 1 # start after weight 20%
         templates:
         - templateName: request-duration-99th-percentile
           clusterScope: true
-          startingStep: 2 # start after 2 steps
         - templateName: success-rate-non-5xx
-          clusterScope: true
-          startingStep: 2 # start after 2 steps
-        - templateName: load-test-errors-latency
           clusterScope: true
         args:
         - name: service-name
           value: hemliga-lappen-stage-canary
-        - name: url
-          value: http://hemliga-lappen-canary.stage.ur.se
       steps:
+      - analysis:
+          templates:
+          - templateName: load-test-errors-latency
+            clusterScope: true
+          args:
+          - name: url
+            value: http://hemliga-lappen-canary.stage.ur.se
       - setWeight: 20
       - analysis:
           templates:
