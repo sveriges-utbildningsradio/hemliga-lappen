@@ -28,8 +28,10 @@ spec:
         templates:
         - templateName: request-duration-99th-percentile
           clusterScope: true
+          startingStep: 2 # start after 2 steps
         - templateName: success-rate-non-5xx
           clusterScope: true
+          startingStep: 2 # start after 2 steps
         - templateName: load-test-errors-latency
           clusterScope: true
         args:
