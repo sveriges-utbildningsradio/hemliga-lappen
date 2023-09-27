@@ -37,6 +37,10 @@ spec:
       steps:
       - analysis:
           templates:
+          - templateName: k6-mount-urls-and-run
+            clusterScope: true
+      - analysis:
+          templates:
           - templateName: load-test-errors-latency
             clusterScope: true
           args:
