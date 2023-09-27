@@ -6,6 +6,7 @@ resources:
 - ingress.yaml
 - rollout.yaml
 - service-canary.yaml
+- k6-load-test-urls-configmap.yaml
 replicas: # scale down deployment because rollout is used in production
 - name: hemliga-lappen-deployment
   count: 0
