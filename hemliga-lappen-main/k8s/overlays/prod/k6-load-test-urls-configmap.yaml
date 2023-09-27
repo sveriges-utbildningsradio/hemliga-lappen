@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: k6-load-test-urls-configmap
+data:
+  P90_THRESHOLD: '600'
+  P95_THRESHOLD: '800'
+  FIRST_P90_THRESHOLD: '550'
+  FIRST_P95_THRESHOLD: '650'
+  MIN_VUS: '5'
+  MAX_VUS: '15'
+  BASE_URL: 'http://hemliga-lappen-canary.stage.ur.se'
+  urls.txt: |
+    /
+    /faq/
+    /about/
+    /security/
