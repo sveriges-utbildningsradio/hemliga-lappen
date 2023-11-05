@@ -3,12 +3,12 @@ kind: ConfigMap
 metadata:
   name: k6-load-test-urls-configmap
 data:
-  P90_THRESHOLD: '1600'
-  P95_THRESHOLD: '1800'
-  FIRST_P90_THRESHOLD: '1550'
-  FIRST_P95_THRESHOLD: '1650'
-  MIN_VUS: '5'
-  MAX_VUS: '10'
+  P90_THRESHOLD: '2600'
+  P95_THRESHOLD: '2800'
+  FIRST_P90_THRESHOLD: '2550'
+  FIRST_P95_THRESHOLD: '2650'
+  MIN_VUS: '1'
+  MAX_VUS: '5'
   BASE_URL: 'http://hemliga-lappen-canary.prod.ur.se'
   urls.txt: |
     /

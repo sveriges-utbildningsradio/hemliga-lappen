@@ -7,7 +7,7 @@ metadata:
     notifications.argoproj.io/subscribe.analysis-run-failed.slack: devsecops-feed
     notifications.argoproj.io/subscribe.on-rollout-completed.slack: devsecops-feed
 spec:
-  replicas: 5
+  replicas: 2
   selector:
     matchLabels:
       app: hemliga-lappen
